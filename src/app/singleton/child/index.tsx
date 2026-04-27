@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Data } from '../styles'
-import { singletonCreator } from '../utils/singleton'
+import { singletonCreator, type SingletonInstance } from '../utils/singleton'
 
 export const Child = () => {
-    const [singleton, setSingleton] = useState()
+    const [singleton, setSingleton] = useState<SingletonInstance>()
 
     useEffect(() => {
         const singletonInstance = singletonCreator.getInstance()

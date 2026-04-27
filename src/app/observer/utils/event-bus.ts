@@ -1,8 +1,16 @@
-const EventEmitter = {
-  events: {
-  },
+export type Events = "helloMessageEvent"
+
+export type TEventEmitter = {
+  events: Record<Events, ((data?: any) => void)[]>,
+  on: (event: Events, callback: (data?: any) => void) => void,
+  emit: (event: Events, data: any) => void,
+  off: (event: Events, callback: (data?: any) => void) => void,
+}
+
+const EventEmitter: TEventEmitter = {
+  events: Object.create(Object),
   // Подписка на событие
-  on(event, callback) {
+  on(event: Events, callback: () => void) {
     if (!this.events[event]) {
       this.events[event] = [];
     }

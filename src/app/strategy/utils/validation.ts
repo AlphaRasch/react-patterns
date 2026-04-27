@@ -1,8 +1,8 @@
 export const ValidationStrategies = {
-  required: (value) => 
+  required: (value: string) => 
     value ? null : 'Это поле обязательно',
-  email: (value) => 
+  email: (value: string) => 
     /\S+@\S+\.\S+/.test(value) ? null : 'Некорректный email',
-  minLength: (length) => (value) => 
+  minLength: (length: number) => (value: string) => 
     value.length >= length ? null : `Минимум ${length} символов`,
 };

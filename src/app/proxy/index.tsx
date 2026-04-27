@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Data, Title, Wrapper, Button } from './styles'
-import { getProxy } from './target'
+import { getProxy, type TargetData } from './target'
 
 export const ProxyComponent = () => {
-    const [proxiedObj, setProxiedObject] = useState()
+    const [proxiedObj, setProxiedObject] = useState<TargetData | null>()
     const [showProxy, setShowProxy] = useState(false)
 
     const handleGetProxy = () => {

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Data, Title, Wrapper } from './styles'
-import { singletonCreator } from './utils/singleton'
+import { singletonCreator, type SingletonInstance } from './utils/singleton'
 import { Child } from './child'
 
 export const Singleton = () => {
-    const [singleton, setSingleton] = useState()
+    const [singleton, setSingleton] = useState<SingletonInstance>()
 
     useEffect(() => {
         const singletonInstance = singletonCreator.getInstance()

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from "react-router";
-import './index.css';
 import { App } from './app';
 import { Observer } from './app/observer';
 import { Strategy } from './app/strategy';
@@ -11,6 +10,8 @@ import { FabricMethod } from './app/fabric-method';
 import { Prototype } from './app/prototype';
 import { ProxyComponent } from './app/proxy';
 import { Bridge } from './app/bridge';
+
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -49,10 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/bridge",
     Component: Bridge
-  },
+  }
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
       <RouterProvider router={router} />

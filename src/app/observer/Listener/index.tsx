@@ -5,7 +5,7 @@ export const Listener = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    const handleEvent = (data) => {
+    const handleEvent = (data: { message: string }) => {
       setMessage(data.message);
     };
 

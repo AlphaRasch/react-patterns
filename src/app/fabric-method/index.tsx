@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Wrapper, Button, Title } from './styles';
-import { componentsFactory } from './factory';
+import { componentsFactory, type FactoryElement, type ComponentsMap } from './factory';
 
 export const FabricMethod = () => {
-    const [componentsList, setComponentsList] = useState([])
+    const [componentsList, setComponentsList] = useState<FactoryElement[]>([])
 
-    const handleAddComponent = (type) => {
+    const handleAddComponent = (type: ComponentsMap) => {
         const component = componentsFactory(type)
 
-        setComponentsList([...componentsList, component])
+        if (component) {
+            setComponentsList([...componentsList, component])
+        }
     }
 
     return (
@@ -18,10 +20,10 @@ export const FabricMethod = () => {
             <Button onClick={() => handleAddComponent("link")}>Добавить ссылку</Button>
 
             {
-                componentsList.map((elem, i) => (
-                    <elem.Component key={i} {...elem?.props}>
-                        {elem.value}
-                    </elem.Component>
+                componentsList.map(({ Component, value, props }, i) => (
+                    <Component key={i} {...props}>
+                        {value}
+                    </Component>
                 ))
             }
         </Wrapper>

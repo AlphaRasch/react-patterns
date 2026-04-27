@@ -2,11 +2,16 @@ import { useState } from 'react';
 import { Button, Form, FormColumn, Input, Title, Wrapper } from './styles'
 import { ValidationStrategies } from './utils/validation'
 
-export const Strategy = () => {
-    const [formData, setFormData] = useState({ email: '', password: '' });
-    const [errors, setErrors] = useState({});
+type Fields = "email" | "password"
 
-    const validateField = (name, value) => {
+export const Strategy = () => {
+    const [formData, setFormData] = useState<Record<Fields, string>>({ email: '', password: '' });
+    const [errors, setErrors] = useState<Record<Fields, string | null>>({
+        email: null,
+        password: null
+    });
+
+    const validateField = (name: Fields, value: string) => {
         let error = null;
         
         // Стратегия 1
@@ -22,13 +27,13 @@ export const Strategy = () => {
         setErrors(prev => ({ ...prev, [name]: error }));
     };
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-        validateField(name, value);
+        validateField(name as Fields, value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!errors.email && !errors.password) {
             console.log('Отправка данных:', formData);
