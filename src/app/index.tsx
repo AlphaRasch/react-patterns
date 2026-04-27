@@ -55,56 +55,20 @@ const textDecorationDisabled = {
 export function App() {
   return (
     <Wrapper className="App">
-        <Title>Поведенческие паттерны</Title>
+        <Title>Темы обучения</Title>
         <Row>
-            <NavLink to="/observer" end style={textDecorationDisabled}>
-                <NavButton>
-                    Observer
-                </NavButton>
-            </NavLink>
-            <NavLink to="/strategy" end style={textDecorationDisabled}>
-                <NavButton>
-                    Strategy
-                </NavButton>
-            </NavLink>
-            <NavLink to="/state" end style={textDecorationDisabled}>
-                <NavButton>
-                    State
-                </NavButton>
-            </NavLink>
-        </Row>
-
-        <Title>Порождающие паттерны</Title>
-        <Row>
-            <NavLink to="/singleton" end style={textDecorationDisabled}>
-                <NavButton>
-                    Singleton
-                </NavButton>
-            </NavLink>
-            <NavLink to="/fabric-method" end style={textDecorationDisabled}>
-                <NavButton>
-                    FabricMethod
-                </NavButton>
-            </NavLink>
-            <NavLink to="/prototype" end style={textDecorationDisabled}>
-                <NavButton>
-                    Prototype
-                </NavButton>
-            </NavLink>
-        </Row>
-
-        <Title>Структурные паттерны</Title>
-        <Row>
-            <NavLink to="/proxy" end style={textDecorationDisabled}>
-                <NavButton>
-                    Proxy
-                </NavButton>
-            </NavLink>
-            <NavLink to="/bridge" end style={textDecorationDisabled}>
-                <NavButton>
-                    Bridge
-                </NavButton>
-            </NavLink>
+            <Row>
+                <NavLink to="/patterns" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Паттерны
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/cart" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Корзина товаров
+                    </NavButton>
+                </NavLink>
+            </Row>
         </Row>
     </Wrapper>
   );

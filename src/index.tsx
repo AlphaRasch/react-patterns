@@ -11,7 +11,10 @@ import { Prototype } from './app/prototype';
 import { ProxyComponent } from './app/proxy';
 import { Bridge } from './app/bridge';
 
+import { Patterns } from './pages/Patterns';
+
 import './index.css';
+import CartPage from './pages/Cart';
 
 const router = createBrowserRouter([
   {
@@ -20,36 +23,49 @@ const router = createBrowserRouter([
     index: true
   },
   {
-    path: "/observer",
-    Component: Observer
+    path: "/cart",
+    Component: CartPage,
   },
   {
-    path: "/strategy",
-    Component: Strategy
-  },
-  {
-    path: "/state",
-    Component: StateComponent
-  },
-  {
-    path: "/singleton",
-    Component: Singleton
-  },
-  {
-    path: "/fabric-method",
-    Component: FabricMethod
-  },
-  {
-    path: "/prototype",
-    Component: Prototype
-  },
-  {
-    path: "/proxy",
-    Component: ProxyComponent
-  },
-  {
-    path: "/bridge",
-    Component: Bridge
+    path: "/patterns",
+    children: [
+      {
+        Component: Patterns,
+        index: true,
+      },
+      {
+        path: "observer",
+        Component: Observer,
+      },
+      {
+        path: "strategy",
+        Component: Strategy
+      },
+      {
+        path: "state",
+        Component: StateComponent
+      },
+      {
+        path: "singleton",
+        Component: Singleton
+      },
+      {
+        path: "fabric-method",
+        Component: FabricMethod
+      },
+      {
+        path: "prototype",
+        Component: Prototype
+      },
+      {
+        path: "proxy",
+        Component: ProxyComponent
+      },
+      {
+        path: "bridge",
+        Component: Bridge
+      }
+    ]
   }
 ]);
 
