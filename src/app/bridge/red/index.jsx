@@ -1,0 +1,1 @@
+export const RedSquare = () => <div style={{ color: 'red' }}>🟥</div>;
