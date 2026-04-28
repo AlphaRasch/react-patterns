@@ -21,7 +21,7 @@ const NavButton = styled.button`
     outline: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,59 +53,74 @@ const textDecorationDisabled = {
 }
 
 export function App() {
-  return (
-    <Wrapper className="App">
-        <Title>Поведенческие паттерны</Title>
-        <Row>
-            <NavLink to="/observer" end style={textDecorationDisabled}>
-                <NavButton>
-                    Observer
-                </NavButton>
-            </NavLink>
-            <NavLink to="/strategy" end style={textDecorationDisabled}>
-                <NavButton>
-                    Strategy
-                </NavButton>
-            </NavLink>
-            <NavLink to="/state" end style={textDecorationDisabled}>
-                <NavButton>
-                    State
-                </NavButton>
-            </NavLink>
-        </Row>
+    return (
+        <Wrapper className="App">
+            <Title>Поведенческие паттерны</Title>
+            <Row>
+                <NavLink to="/observer" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Observer
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/strategy" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Strategy
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/state" end style={textDecorationDisabled}>
+                    <NavButton>
+                        State
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/command" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Command
+                    </NavButton>
+                </NavLink>
+            </Row>
 
-        <Title>Порождающие паттерны</Title>
-        <Row>
-            <NavLink to="/singleton" end style={textDecorationDisabled}>
-                <NavButton>
-                    Singleton
-                </NavButton>
-            </NavLink>
-            <NavLink to="/fabric-method" end style={textDecorationDisabled}>
-                <NavButton>
-                    FabricMethod
-                </NavButton>
-            </NavLink>
-            <NavLink to="/prototype" end style={textDecorationDisabled}>
-                <NavButton>
-                    Prototype
-                </NavButton>
-            </NavLink>
-        </Row>
+            <Title>Порождающие паттерны</Title>
+            <Row>
+                <NavLink to="/singleton" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Singleton
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/fabric-method" end style={textDecorationDisabled}>
+                    <NavButton>
+                        FabricMethod
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/prototype" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Prototype
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/builder" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Builder
+                    </NavButton>
+                </NavLink>
+            </Row>
 
-        <Title>Структурные паттерны</Title>
-        <Row>
-            <NavLink to="/proxy" end style={textDecorationDisabled}>
-                <NavButton>
-                    Proxy
-                </NavButton>
-            </NavLink>
-            <NavLink to="/bridge" end style={textDecorationDisabled}>
-                <NavButton>
-                    Bridge
-                </NavButton>
-            </NavLink>
-        </Row>
-    </Wrapper>
-  );
+            <Title>Структурные паттерны</Title>
+            <Row>
+                <NavLink to="/proxy" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Proxy
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/bridge" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Bridge
+                    </NavButton>
+                </NavLink>
+                <NavLink to="/decorator" end style={textDecorationDisabled}>
+                    <NavButton>
+                        Decorator
+                    </NavButton>
+                </NavLink>
+            </Row>
+        </Wrapper>
+    );
 }
