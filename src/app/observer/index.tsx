@@ -2,7 +2,7 @@ import { Title, Wrapper } from './styles'
 import { Sender } from './Sender'
 import { Listener } from './Listener'
 
-export const Observer = () => {
+const Observer = () => {
     return (
         <Wrapper>
             <Title>Observer</Title>
@@ -11,3 +11,5 @@ export const Observer = () => {
         </Wrapper>
     )
 }
+
+export default Observer;
